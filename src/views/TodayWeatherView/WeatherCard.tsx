@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import { withPrefix } from "../../../with-prefix";
 import { CitiesUnion, Coordinates } from "../../enum-types";
 import { fetchData } from "../../fetch-data";
 
@@ -28,11 +29,9 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates, city }) =
     return <div>loading...</div>;
   }
 
-  console.log(data);
-
   const celsius = Math.round(parseFloat(data.main.temp) - 273.15);
 
-  const image = imgToWeatherDescription[data.weather[0].main];
+  const image = withPrefix(imgToWeatherDescription[data.weather[0].main]);
 
   return (
     <div
