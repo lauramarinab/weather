@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { withPrefix } from "../../with-prefix";
+import { withPrefix } from "../../../with-prefix";
 
 export const HomepageView: React.FC = () => {
   const router = useRouter();
@@ -12,7 +11,7 @@ export const HomepageView: React.FC = () => {
           <img src={withPrefix("/images/blob-cookie.png")} alt="blob cookie" width={50} height={50} />
         </span>
       </h1>
-      <button onClick={() => router.push("/today")}>Che tempo farà domani?</button>
+      <button onClick={() => router.push("/today")}>{"Che tempo c'è adesso?"}</button>
     </>
   );
 };

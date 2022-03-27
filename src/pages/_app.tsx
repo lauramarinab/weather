@@ -1,10 +1,9 @@
-import type { AppContext, AppInitialProps, AppProps } from "next/app";
 import { NextComponentType } from "next";
+import type { AppContext, AppInitialProps, AppProps } from "next/app";
 import Head from "next/head";
 import { withPrefix } from "../../with-prefix";
-
-import "../styles/reset.css";
 import "../styles/globals.css";
+import "../styles/reset.css";
 
 const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
   return (
@@ -24,13 +23,18 @@ const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ C
             padding: "0.8rem 0",
             borderTop: "1px solid #eaeaea",
             textAlign: "center",
+            backdropFilter: "blur(8px)",
+            boxShadow: "0px 10px 15px 10px rgb(0 0 0 / 5%)",
+            backgroundColor: "rgb(228 228 228 / 10%)",
           }}
         >
           <a
             href="https://github.com/lauramarinab"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: "0.8rem" }}
+            style={{
+              fontSize: "0.8rem",
+            }}
           >
             powered by lauramarinab{" "}
             <span role="img" aria-label="hearth">
