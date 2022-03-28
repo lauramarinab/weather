@@ -5,7 +5,6 @@ export const HomepageView: React.FC = () => {
   const router = useRouter();
   return (
     <>
-      <h2>CIAO</h2>
       <h1 className="title-homepage">
         Weather with blob
         <span>
