@@ -61,6 +61,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates, city }) =
         }}
       >
         <h2 style={{ fontSize: 24 }}>{city}</h2>
+        ciao
         {image ? <img src={image} alt={data.weather[0].main} width={60} height={60} /> : null}
         <div>
           <p style={{ fontSize: 16 }}>{data.weather[0].description}</p>
