@@ -2,8 +2,10 @@ import { NextComponentType } from "next";
 import type { AppContext, AppInitialProps, AppProps } from "next/app";
 import Head from "next/head";
 import { withPrefix } from "../../with-prefix";
+
 import "../styles/globals.css";
 import "../styles/reset.css";
+import "../styles/font.css";
 
 const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
   return (
@@ -26,7 +28,7 @@ const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ C
             textAlign: "center",
             backdropFilter: "blur(8px)",
             boxShadow: "0px 10px 15px 10px rgb(0 0 0 / 5%)",
-            backgroundColor: "rgb(228 228 228 / 10%)",
+            backgroundColor: "rgb(255 255 255 / 35%)",
           }}
         >
           <a

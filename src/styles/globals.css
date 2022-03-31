@@ -28,3 +28,10 @@ a {
     flex-direction: row;
   }
 }
+
+.title-interaction {
+  font-family: "Open Sans", sans-serif;
+  color: #df325f;
+  font-weight: 600;
+  font-size: 24px;
+}
