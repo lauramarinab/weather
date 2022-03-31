@@ -1,4 +1,5 @@
-export type InteractionName = "stepper" | "highlights";
+export const interactionsName = ["stepper", "highlights"];
+export type InteractionName = typeof interactionsName[number];
 
 type MicroInteractionsViewProps = { interactionName: InteractionName };
 
