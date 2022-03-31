@@ -10,11 +10,6 @@
     "export": "next export",
     "test": "jest"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn dev"
-    }
-  },
   "dependencies": {
     "@react-aria/interactions": "^3.8.3",
     "next": "12.1.1",
