@@ -1,18 +1,19 @@
 import { NextPage } from "next";
-import { InteractionName, MicroInteractionsView } from "../../views/MicroInteractionsView";
+import { InteractionName } from "../../types";
+import { MicroInteractionsView } from "../../views/MicroInteractionsView";
 
-type MicroAnimationsPageProps = { interactionName: InteractionName };
+type MicroAnimationsPageProps = { interactionName: string };
 
 const MicroAnimationsPage: NextPage<MicroAnimationsPageProps> = ({ interactionName }) => {
   return (
     <main style={{ height: "100vh", background: "#FCFAF6", padding: "2%" }}>
-      <MicroInteractionsView interactionName={interactionName} />
+      <MicroInteractionsView interactionName={interactionName as InteractionName} />
     </main>
   );
 };
 
 MicroAnimationsPage.getInitialProps = ({ query }) => {
-  const interactionName = query.interactionName as InteractionName;
+  const interactionName = query.interactionName as string;
   return { interactionName };
 };
 

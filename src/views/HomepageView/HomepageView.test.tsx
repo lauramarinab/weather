@@ -7,7 +7,7 @@ describe(HomepageView.name, () => {
   it("should navigate to `today` page", async () => {
     render(<HomepageView />);
 
-    userEvent.click(screen.getByText("Che tempo c'è adesso?"));
+    userEvent.click(screen.getByText(/meteo oggi/i));
 
     await waitFor(() => {
       expect(mockRouter).toMatchObject({ asPath: "/today" });

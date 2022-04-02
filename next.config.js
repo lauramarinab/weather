@@ -7,10 +7,15 @@ const nextConfig = {
   assetPrefix: isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "",
   basePath: isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "",
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
-    return {
-      "/micro-interactions/stepper": { page: "/micro-interactions/[interactionName]" },
-      "/micro-interactions/highlights": { page: "/micro-interactions/[interactionName]" },
-    };
+    if (isProd) {
+      return {
+        "/micro-interactions/stepper": { page: "/micro-interactions/[interactionName]" },
+        "/micro-interactions/highlights": { page: "/micro-interactions/[interactionName]" },
+        "/micro-interactions/animatedCounter": { page: "/micro-interactions/[interactionName]" },
+        "/micro-interactions/animateOpen": { page: "/micro-interactions/[interactionName]" },
+        "/micro-interactions/needHelp": { page: "/micro-interactions/[interactionName]" },
+      };
+    }
   },
 };
 
