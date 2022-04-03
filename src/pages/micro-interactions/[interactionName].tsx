@@ -19,9 +19,9 @@ type MicroInteractionDetailPageProps = { interactionName: string };
 
 const MicroInteractionDetailPage: NextPage<MicroInteractionDetailPageProps> = ({ interactionName }) => {
   return (
-    <div style={{ background: "#FCFAF6", height: "calc(100vh - 50px)", position: "relative", padding: "24px 32px" }}>
+    <main style={{ height: "calc(100vh - 50px)", position: "relative", padding: "24px 32px" }}>
       <MicroInteractionDetailView interactionName={interactionName as InteractionName} />
-    </div>
+    </main>
   );
 };
 
