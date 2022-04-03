@@ -23,6 +23,9 @@ const MicroInteractionsPage: NextPage = () => {
         <Link href={Urls.interactionName("animatedCounter")} passHref>
           <CardLink>Counter animato</CardLink>
         </Link>
+        <Link href={Urls.interactionName("pageTransition")} passHref>
+          <CardLink>Transizione pagine</CardLink>
+        </Link>
       </div>
     </Main>
   );

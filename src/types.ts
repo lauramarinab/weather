@@ -7,6 +7,7 @@ export const interactionsName = {
   needHelp: "needHelp",
   animateOpen: "animateOpen",
   animatedCounter: "animatedCounter",
+  pageTransition: "pageTransition",
 } as const;
 
 export type InteractionName = KeysAsUnion<typeof interactionsName>;
