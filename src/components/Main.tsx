@@ -1,18 +1,9 @@
-export const Main: React.FC = ({ children }) => {
-  return (
-    <main
-      style={{
-        padding: "0 2%",
-        maxWidth: 500,
-        width: "100%",
-        margin: "auto",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      {children}
-    </main>
-  );
-};
+import styled from "@emotion/styled";
+
+export const Main = styled.main({
+  height: "calc(100vh - 50px)",
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+});

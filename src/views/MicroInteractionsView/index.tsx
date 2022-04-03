@@ -1,21 +1,23 @@
 import { InteractionName } from "../../types";
 
-type MicroInteractionsViewProps = { interactionName: InteractionName };
+type MicroInteractionDetailViewProps = { interactionName: InteractionName };
 
-export const MicroInteractionsView: React.FC<MicroInteractionsViewProps> = ({ interactionName }) => {
+export const MicroInteractionDetailView: React.FC<MicroInteractionDetailViewProps> = ({ interactionName }) => {
   return (
-    <div>
-      <h2 className="title-interaction">{microInteractions[interactionName].description}</h2>
+    <>
+      <h2 css={{ fontFamily: '"Open Sans", sans-serif', color: "#df325f", fontWeight: "600", fontSize: 24 }}>
+        {microInteractions[interactionName].description}
+      </h2>
       <video
         controls
         width="768"
         autoPlay
-        style={{
+        css={{
           margin: "0 auto",
-          position: "absolute",
           transform: "translate(-50%, -50%)",
+          top: "50%",
           left: "50%",
-          top: "calc(50% - 25px)",
+          position: "absolute",
         }}
       >
         <source
@@ -28,7 +30,7 @@ export const MicroInteractionsView: React.FC<MicroInteractionsViewProps> = ({ in
           type="video/mp4"
         />
       </video>
-    </div>
+    </>
   );
 };
 

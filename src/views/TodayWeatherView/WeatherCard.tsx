@@ -31,9 +31,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates, city }) =
 
   const celsius = Math.round(parseFloat(data.main.temp) - 273.15);
 
-  const image = withPrefix(imgToWeatherDescription[data.weather[0].main]);
-
-  console.log({ main: data.weather[0].main });
+  const imagePath = getImgByWeatherDescription(data.weather[0].main);
 
   return (
     <div
@@ -61,7 +59,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({ coordinates, city }) =
         }}
       >
         <h2 style={{ fontSize: 24 }}>{city}</h2>
-        {image ? <img src={image} alt={data.weather[0].main} width={60} height={60} /> : null}
+        <img src={withPrefix(imagePath)} alt={data.weather[0].main} width={60} height={60} />
         <div>
           <p style={{ fontSize: 16 }}>{data.weather[0].description}</p>
           <p style={{ fontSize: 40 }}>{celsius}°</p>
@@ -75,8 +73,15 @@ const getCoordinatesQueryParams = ({ lat, lon }: Coordinates) => {
   return `?lat=${lat}&lon=${lon}`;
 };
 
-const imgToWeatherDescription: Record<string, string> = {
-  Clouds: "/images/clouds.png",
-  Clear: "/images/clear.png",
-  Rain: "/images/rain.png",
+const getImgByWeatherDescription = (weatherDescription: string): string => {
+  switch (weatherDescription) {
+    case "Clouds":
+      return "/images/clouds.png";
+    case "Clear":
+      return "/images/clear.png";
+    case "Rain":
+      return "/images/rain.png";
+    default:
+      return "/images/thinking.png";
+  }
 };

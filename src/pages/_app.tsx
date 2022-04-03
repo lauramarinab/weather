@@ -6,6 +6,8 @@ import { withPrefix } from "../../with-prefix";
 import "../styles/globals.css";
 import "../styles/reset.css";
 import "../styles/font.css";
+import { Layout } from "../components/Layout";
+import { AnimatePresence } from "framer-motion";
 
 const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
   return (
@@ -16,36 +18,36 @@ const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ C
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <link rel="icon" href={withPrefix("/favicon.ico")} />
       </Head>
-      <div>
+      <AnimatePresence exitBeforeEnter initial={false}>
         <Component {...pageProps} />
-        <footer
-          style={{
-            position: "fixed",
-            bottom: 0,
-            width: "100%",
-            padding: "0.8rem 0",
-            borderTop: "1px solid #eaeaea",
-            textAlign: "center",
-            backdropFilter: "blur(8px)",
-            boxShadow: "0px 10px 15px 10px rgb(0 0 0 / 5%)",
-            backgroundColor: "rgb(255 255 255 / 35%)",
-          }}
+      </AnimatePresence>
+      <footer
+        css={{
+          position: "fixed",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          height: 50,
+          bottom: 0,
+          width: "100%",
+          borderTop: "1px solid #eaeaea",
+          backdropFilter: "blur(8px)",
+          boxShadow: "0px 10px 15px 10px rgb(0 0 0 / 5%)",
+          backgroundColor: "rgb(255 255 255 / 35%)",
+        }}
+      >
+        <a
+          href="https://github.com/lauramarinab"
+          target="_blank"
+          rel="noopener noreferrer"
+          css={{ fontSize: "0.8rem" }}
         >
-          <a
-            href="https://github.com/lauramarinab"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              fontSize: "0.8rem",
-            }}
-          >
-            powered by lauramarinab{" "}
-            <span role="img" aria-label="hearth">
-              ❤️
-            </span>
-          </a>
-        </footer>
-      </div>
+          powered by lauramarinab{" "}
+          <span role="img" aria-label="hearth">
+            ❤️
+          </span>
+        </a>
+      </footer>
     </>
   );
 };

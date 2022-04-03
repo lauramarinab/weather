@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { GetStaticPaths, NextPage } from "next";
 import { InteractionName, interactionsName } from "../../types";
-import { MicroInteractionsView } from "../../views/MicroInteractionsView";
+import { MicroInteractionDetailView } from "../../views/MicroInteractionsView";
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
@@ -15,14 +15,14 @@ export const getStaticProps = ({ params }: { params: { interactionName: string }
   return { props: { interactionName: params.interactionName } };
 };
 
-type MicroAnimationsPageProps = { interactionName: string };
+type MicroInteractionDetailPageProps = { interactionName: string };
 
-const MicroAnimationsPage: NextPage<MicroAnimationsPageProps> = ({ interactionName }) => {
+const MicroInteractionDetailPage: NextPage<MicroInteractionDetailPageProps> = ({ interactionName }) => {
   return (
-    <main style={{ height: "100vh", background: "#FCFAF6", padding: "2%" }}>
-      <MicroInteractionsView interactionName={interactionName as InteractionName} />
-    </main>
+    <div style={{ background: "#FCFAF6", height: "calc(100vh - 50px)", position: "relative", padding: "24px 32px" }}>
+      <MicroInteractionDetailView interactionName={interactionName as InteractionName} />
+    </div>
   );
 };
 
-export default MicroAnimationsPage;
+export default MicroInteractionDetailPage;
