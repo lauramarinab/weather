@@ -9,6 +9,8 @@ export const MicroInteractionDetailView: React.FC<MicroInteractionDetailViewProp
         {microInteractions[interactionName].description}
       </h2>
       <video
+        muted
+        playsInline
         controls
         width="768"
         autoPlay
