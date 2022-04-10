@@ -1,13 +1,12 @@
+import Head from "next/head";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { NextComponentType } from "next";
 import type { AppContext, AppInitialProps, AppProps } from "next/app";
-import Head from "next/head";
 import { withPrefix } from "../../with-prefix";
 
+import "../styles/font.css";
 import "../styles/globals.css";
 import "../styles/reset.css";
-import "../styles/font.css";
-import { Layout } from "../components/Layout";
-import { AnimatePresence } from "framer-motion";
 
 const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
   return (
@@ -19,7 +18,9 @@ const CustomApp: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ C
         <link rel="icon" href={withPrefix("/favicon.ico")} />
       </Head>
       <AnimatePresence exitBeforeEnter initial={false}>
-        <Component {...pageProps} />
+        <AnimateSharedLayout>
+          <Component {...pageProps} />
+        </AnimateSharedLayout>
       </AnimatePresence>
       <footer
         css={{

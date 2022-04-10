@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { withPrefix } from "../../../with-prefix";
@@ -14,11 +15,26 @@ export const HomepageView: React.FC = () => {
         height: "100%",
       }}
     >
-      <div css={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
-        <img src={withPrefix("/images/blob-cookie.png")} alt="blob cookie" width={50} height={50} />
-        <h1 css={{ textAlign: "center", fontSize: "3rem" }}>Weather with blob</h1>
+      <motion.div
+        css={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}
+        layoutId="wrapper-header"
+      >
+        <motion.img
+          src={withPrefix("/images/blob-cookie.png")}
+          alt="blob cookie"
+          width={50}
+          height={50}
+          layoutId="blob"
+        />
+        <motion.h1 layoutId="title" css={{ textAlign: "center", fontSize: 42 }}>
+          Weather with blob
+        </motion.h1>
         <Link href={Urls.today} passHref>
-          <a
+          <motion.a
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.4 }}
+            exit={{ opacity: 0 }}
             css={{
               background:
                 "linear-gradient(to right, rgba(0, 100, 200, 1), rgba(42, 255, 255, 1)), linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1))",
@@ -34,9 +50,9 @@ export const HomepageView: React.FC = () => {
             }}
           >
             Meteo oggi
-          </a>
+          </motion.a>
         </Link>
-      </div>
+      </motion.div>
     </div>
   );
 };
