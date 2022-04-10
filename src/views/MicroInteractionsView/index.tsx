@@ -41,7 +41,7 @@ const microInteractions: Record<InteractionName, { id: string; description: stri
   stepper: { id: "161131088-16ff487d-298b-45bc-bfde-277d6913cf30", description: "Stepper" },
   highlights: { id: "161136716-364b4da1-7cda-4138-98c0-607865900b6c", description: "Lead card con effetto highlights" },
   needHelp: { id: "161389220-ce5a75ae-ad3a-4253-91cf-1154cade3fa6", description: "Bottone con animazione: Need help?" },
-  pageTransition: { id: "161422198-d3c1d75b-c57c-41ea-bcd9-b5becf8d3434", description: "Transizione tra le pagine" },
+  pageTransition: { id: "162629649-3941f19f-4874-469b-ba61-d8e72764e9d0", description: "Transizione tra le pagine" },
   animateOpen: {
     id: "161389696-0ce1aa0d-5928-41aa-8320-33aae031e22f",
     description: "Effetto collapse con framer motion",
